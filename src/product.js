@@ -2,7 +2,7 @@ import fixText from "./fixtext";
 
 const product = async (query) => {
   const product_page = await (
-    await fetch(`https://www.amazon.it/${query}`)
+    await fetch(`https://www.amazon.it/dp/${query}`)
   ).text();
 
   try {
