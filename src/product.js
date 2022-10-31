@@ -5,21 +5,7 @@ const product = async (query) => {
     await fetch(`https://www.amazon.it/dp/${query}`)
   ).text();
 console.log("sono prodotto", product)
-  try {
-    var features = [];
-    var feat = product_page
-      .split('<ul class="a-unordered-list a-vertical a-spacing-mini">')[1]
-      .split("</ul>")[0];
-    var feat = feat.split('<span class="a-list-item">');
-    for (var i = 1; i < feat.length; i++) {
-      try {
-        features.push(fixText(feat[i].split("</span>")[0]));
-      } catch (err) {}
-    }
-  } catch (err) {
-    var features = [null];
-  }
-
+  
   var price = null;
   var original_price = null;
 
