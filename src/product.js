@@ -24,7 +24,7 @@ const product = async (query) => {
   var original_price = null;
 
   try {
-    var pricediv = product_page.split(/<div id="corePrice_feature_div".*>/g);
+    var pricediv = product_page.split(/<div id="unifiedPrice_feature_div".*>/g);
 
     original_price = pricediv[1]
       .split('<span class="a-offscreen">')[1]
@@ -33,7 +33,7 @@ const product = async (query) => {
     try {
       price = pricediv[1]
         .split(
-          '<span class="a-price aok-align-center reinventPricePriceToPayMargin priceToPay">'
+          '<span class="a-price a-text-price a-size-medium apexPriceToPay" data-a-size="b" data-a-color="price">'
         )[1]
         .split("</span>")[0];
       if (price.includes(">")) {
