@@ -119,7 +119,7 @@ const product = async (query) => {
       in_stock,
       rating_details,
       features,
-      product_link: `https://www.amazon.it/${query}`,
+      product_link: `https://www.amazon.it/dp/${query}`,
     };
   } catch (err) {
     var product_detail = null;
@@ -129,7 +129,7 @@ const product = async (query) => {
     {
       status: true,
       query,
-      fetch_from: `https://www.amazon.it/${query}`,
+      fetch_from: `https://www.amazon.it/dp/${query}`,
       product_detail,
     },
     null,
