@@ -24,7 +24,7 @@ const product = async (query) => {
   var original_price = null;
 
   try {
-    var pricediv = product_page.split(/<div id="unifiedPrice_feature_div".*>/g);
+    var pricediv = product_page.split(/<div id="corePrice_feature_div".*>/g);
 
     original_price = pricediv[1]
       .split('<span class="a-offscreen">')[1]
