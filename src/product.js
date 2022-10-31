@@ -4,7 +4,7 @@ const product = async (query) => {
   const product_page = await (
     await fetch(`https://www.amazon.it/dp/${query}`)
   ).text();
-
+console.log("sono prodotto", product)
   try {
     var features = [];
     var feat = product_page
