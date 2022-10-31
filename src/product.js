@@ -116,9 +116,6 @@ console.log("sono prodotto", product)
       image,
       price,
       original_price,
-      in_stock,
-      rating_details,
-      features,
       product_link: `https://www.amazon.it/dp/${query}`,
     };
   } catch (err) {
