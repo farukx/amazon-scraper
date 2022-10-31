@@ -40,7 +40,7 @@ console.log("sono prodotto", product)
     );
   }
   if (price !== null) {
-    price = parseFloat(price.replace("₹", "").replace(/,/g, "").trim());
+    price = parseFloat(price.replace("₹", "$").replace(/,/g, "").trim());
   }
 
   try {
