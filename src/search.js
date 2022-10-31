@@ -3,7 +3,7 @@ import fixText from "./fixtext";
 export default async function searchProducts(query, host) {
   const searchQuery = query.replace(/%20/gi, "+");
   const searchRes = await (
-    await fetch(`https://www.amazon.in/s?k=${searchQuery}`)
+    await fetch(`https://www.amazon.it/s?k=${searchQuery}`)
   ).text();
 
   var all_product = searchRes.split(
@@ -16,7 +16,7 @@ export default async function searchProducts(query, host) {
     /* (type 1) */
     try {
       var product_link =
-        "https://www.amazon.in" +
+        "https://www.amazon.it" +
         all_product[i]
           .split(
             '<a class="a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal" target="_blank" href="'
@@ -79,7 +79,7 @@ export default async function searchProducts(query, host) {
     for (i = 1; i < all_product.length; i++) {
       try {
         var product_link =
-          "https://www.amazon.in" +
+          "https://www.amazon.it" +
           all_product[i]
             .split(
               /<a class="a-link-normal.*a-text-normal" target="_blank" href="/
@@ -124,7 +124,7 @@ export default async function searchProducts(query, host) {
                 .trim()
             ),
             product_link,
-            query_url: product_link.replace("www.amazon.in", host + "/product"),
+            query_url: product_link.replace("www.amazon.it", host + "/product"),
           });
         }
       } catch (err) {}
@@ -136,7 +136,7 @@ export default async function searchProducts(query, host) {
       status: true,
       total_result: result.length,
       query: searchQuery,
-      fetch_from: `https://www.amazon.in/s?k=${searchQuery}`,
+      fetch_from: `https://www.amazon.it/s?k=${searchQuery}`,
       result,
     },
     null,
