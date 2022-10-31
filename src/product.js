@@ -6,8 +6,8 @@ const product = async (query) => {
   ).text();
 console.log("sono prodotto", product)
   
-  var price = null;
-  var original_price = null;
+  var price = "";
+  var original_price = "";
 
   try {
     var pricediv = product_page.split(/<div id="corePriceDisplay_desktop_feature_div".*>/g);
