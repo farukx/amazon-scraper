@@ -33,7 +33,7 @@ const product = async (query) => {
     try {
       price = pricediv[1]
         .split(
-          '<span class="a-price a-text-price a-size-medium apexPriceToPay" data-a-size="b" data-a-color="price">'
+          '<span class="a-price aok-align-center reinventPricePriceToPayMargin priceToPay">'
         )[1]
         .split("</span>")[0];
       if (price.includes(">")) {
