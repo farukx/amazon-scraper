@@ -57,35 +57,25 @@ const product = async (query) => {
     var image = null;
   }
 
-  try {
-    var product_detail = {
+  return JSON.stringify(
+    {
+      status: true,
+      query,
       name: fixText(
-        product_page
-          .split(
-            '<span id="productTitle" class="a-size-large product-title-word-break">'
-          )[1]
-          .split("</span>")[0]
+          product_page
+              .split(
+                  '<span id="productTitle" class="a-size-large product-title-word-break">'
+              )[1]
+              .split("</span>")[0]
       ),
       image,
       price,
       original_price,
       product_link: `https://www.amazon.it/dp/${query}/?&tag=angelblack199-21`,
-    };
-  } catch (err) {
-    var product_detail = null;
-  }
-
-  return JSON.stringify(
-    {
-      status: true,
-      query,
-      product_detail,
     },
     null,
     2
   );
 };
-
-
 
 export default product;
