@@ -31,11 +31,7 @@ async function handleRequest(request) {
             /* Extra curricular activities */ alive: true,
             repository_name: "amazon-scraper",
             repository_description:
-              "Serverless Amazon India Scraper with search and product API, made with Cloudflare worker",
-            repository_url: "https://github.com/tuhinpal/amazon-scraper",
-            made_by: "https://github.com/tuhinpal",
-            api_endpoints:
-              "https://github.com/tuhinpal/amazon-scraper#api-endpoint",
+              "Serverless Amazon Italian Scraper"
           },
           null,
           2
