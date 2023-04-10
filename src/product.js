@@ -13,13 +13,13 @@ const product = async (query) => {
     } catch (pe) {
     }
     try {
-        let image = product_page
+        var image = product_page
             .split('<div id="imgTagWrapperId" class="imgTagWrapper">')[1]
             .split('data-old-hires="')[1]
             .split('"')[0]
             .replaceAll("\n", "");
         if (image === "") {
-            let image = product_page
+            var image = product_page
                 .split('<div id="imgTagWrapperId" class="imgTagWrapper">')[1]
                 .split('data-a-dynamic-image="{&quot;')[1]
                 .split("&quot;")[0]
