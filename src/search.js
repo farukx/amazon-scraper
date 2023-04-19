@@ -8,6 +8,7 @@ export default async function searchProducts(query, host) {
     );
     var dan = "test"
     console.log("all_product", all_product.length)
+    console.log("all_product",all_product)
     var i,
         result = [];
     all_product = searchRes.split(
