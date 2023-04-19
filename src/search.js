@@ -6,6 +6,7 @@ export default async function searchProducts(query, host) {
     var all_product = searchRes.split(
         '<div class="a-section a-spacing-base">'
     );
+    var dan = "test"
     console.log("all_product", all_product.length)
     var i,
         result = [];
@@ -43,6 +44,7 @@ export default async function searchProducts(query, host) {
                 });
             }
         } catch (err) {
+            console.log(err)
         }
     }
 
@@ -53,6 +55,7 @@ export default async function searchProducts(query, host) {
             query: searchQuery,
             fetch_from: `https://www.amazon.it/s?k=${searchQuery}`,
             result,
+            dan
         },
         null,
         2
