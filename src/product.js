@@ -13,6 +13,12 @@ const product = async (query) => {
     } catch (pe) {
     }
     try {
+        var name = fixText(
+            product_page
+                .split(
+                    '<span id="productTitle" class="a-size-large product-title-word-break">'
+                )[1]
+                .split("</span>")[0]);
         var image = product_page
             .split('<div id="imgTagWrapperId" class="imgTagWrapper">')[1]
             .split('data-old-hires="')[1]
@@ -25,6 +31,13 @@ const product = async (query) => {
                 .split("&quot;")[0]
                 .replaceAll("\n", "");
         }
+        var all_product = product_page.split(
+            '<div class="sponsored-products-truncator-truncate">'
+        );
+        var i,
+            result = [];
+        var dio = all_product.length
+
     } catch (e) {
         var image = null;
     }
@@ -33,13 +46,7 @@ const product = async (query) => {
         {
             status: true,
             query,
-            name: fixText(
-                product_page
-                    .split(
-                        '<span id="productTitle" class="a-size-large product-title-word-break">'
-                    )[1]
-                    .split("</span>")[0]
-            ),
+            name,
             image,
             price,
             product_link: `https://www.amazon.it/dp/${query}/?&tag=angelblack199-21`,

@@ -11,9 +11,6 @@ export default async function searchProducts(query, host) {
     console.log("all_product",all_product)
     var i,
         result = [];
-    all_product = searchRes.split(
-        '<div class="a-section a-spacing-base">'
-    );
     for (i = 1; i < all_product.length; i++) {
         try {
             var product_link =
